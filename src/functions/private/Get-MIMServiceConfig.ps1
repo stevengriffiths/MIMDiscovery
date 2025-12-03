@@ -4,6 +4,8 @@ function Get-MIMServiceConfig {
     Get-MIMServiceInstallAccount
     Get-MIMServiceInstallPath
     Get-MIMServiceServiceAccount
+    Get-MIMServiceBaseAddress
+    Get-MIMServiceAppSettings
     Get-MIMServiceDelegation
     Get-MIMServiceDatabaseName
     Get-MIMServiceDatabaseServer

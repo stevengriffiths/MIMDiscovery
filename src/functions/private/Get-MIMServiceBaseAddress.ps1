@@ -1,14 +1,16 @@
-function Connect-RMClient {
+function Get-MIMServiceBaseAddress {
   try {
     $configFile = Get-ItemPropertyValue -Path HKLM:\SYSTEM\CurrentControlSet\Services\FIMService -Name ExeConfigPath
     [xml]$config = Get-Content -Path $configFile
     $baseAddress = ([xml]($config.OuterXml)).SelectNodes("//resourceManagementClient").resourceManagementServiceBaseAddress
-    if ($baseAddress -match '^(?:https?:\/\/)?([^\/:]+)') {
-      $rmclient = 'http://' + $Matches[1] + ':5725'
-      Set-ResourceManagementClient -BaseAddress $rmclient
+    [PSCustomObject]@{
+      Host     = $env:COMPUTERNAME
+      Role     = 'Service'
+      Property = 'Base address'
+      Value    = $baseAddress
     }
   }
   catch {
-    throw $_
+    return
   }
 }

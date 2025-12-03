@@ -1,4 +1,4 @@
-function Get-WorkflowsMprsAndSets {
+function Get-WorkflowsMprsAndSetsAll {
   try {
     $slu = @{}
     Search-Resources -XPath "/Set" -AttributesToGet DisplayName,Filter,ObjectID | `

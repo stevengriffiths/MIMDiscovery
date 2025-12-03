@@ -14,6 +14,7 @@ function Get-MIMPortalWebApp {
     return
   }
   finally {
+    Remove-PSSnapin -Name Microsoft.SharePoint.PowerShell
     $webApp
   }
 }
