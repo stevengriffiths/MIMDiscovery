@@ -9,6 +9,7 @@ function Get-MIMPortalConfig {
       Get-MIMAppPoolAccount -Application $webApp
       Get-MIMPortalAlternateUrls -Application $webApp
       Get-MIMPortalSPDatabases -Application $webApp
+      Get-MIMPortalSPNs -Application $webApp
       Get-MIMPortalDelegation -Application $webApp
     }
   }

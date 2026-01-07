@@ -6,6 +6,7 @@ function Get-MIMServiceConfig {
     Get-MIMServiceServiceAccount
     Get-MIMServiceBaseAddress
     Get-MIMServiceAppSettings
+    Get-MIMServiceSPNs
     Get-MIMServiceDelegation
     Get-MIMServiceDatabaseName
     Get-MIMServiceDatabaseServer
