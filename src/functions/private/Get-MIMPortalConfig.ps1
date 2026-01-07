@@ -11,6 +11,7 @@ function Get-MIMPortalConfig {
       Get-MIMPortalSPDatabases -Application $webApp
       Get-MIMPortalSPNs -Application $webApp
       Get-MIMPortalDelegation -Application $webApp
+      Get-MIMPortalCertificateDetails -Application $webApp
     }
   }
   catch {
