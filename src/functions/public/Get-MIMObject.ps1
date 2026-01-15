@@ -20,12 +20,13 @@ function Get-MIMObject {
     Connect-RMClient
     try {
       [System.Guid]::Parse($ObjectID) | Out-Null
-      $filter = "/$ObjectType[ObjectID='$ID']"
+      $filter = "/$ObjectType[ObjectID='$ObjectID']"
     }
     catch {
       $filter = "/$ObjectType[starts-with(DisplayName,'$ObjectID')]"
     }
     finally {
+	  Write-Verbose $filter
       if ($All) {
         Search-Resources -XPath $filter -ExpectedObjectType $ObjectType
       }

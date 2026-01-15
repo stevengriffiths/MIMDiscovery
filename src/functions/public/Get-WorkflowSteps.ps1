@@ -8,7 +8,7 @@ function Get-WorkflowSteps {
 
     [parameter(Mandatory=$false)]
     [string[]]
-    $Attributes = @('Name','LocalName','Description','ControlTitle','Script','Destination','FunctionExpression','FunctionText')
+    $Attributes = @('Name','ObjectID','LocalName','Description','ControlTitle','Script','Destination','FunctionExpression','FunctionText')
   )
 
   try {
