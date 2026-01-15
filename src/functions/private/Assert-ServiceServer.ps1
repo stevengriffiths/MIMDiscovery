@@ -1,6 +1,6 @@
 function Assert-ServiceServer {
   try {
-    Get-Service -Name 'FIMService'  | Out-Null
+    Get-Service -Name 'FIMService' -ErrorAction Stop | Out-Null
     $result = $true
   }
   catch {
