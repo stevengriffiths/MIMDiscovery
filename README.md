@@ -1,5 +1,7 @@
 # Introduction
-MIMDiscovery is a module containing cmdlets that obtain various pieces of MIM configuration.
+MIMDiscovery is a module containing cmdlets that obtain various pieces of MIM configuration. The main cmdlet is Get-MIMConfig.
+
+To install, copy the src folder to the target server, rename the folder to MIMDiscovery, then import the module as normal.
 
 # Cmdlets
 
