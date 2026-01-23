@@ -1,0 +1,6 @@
+# Commands to create serialised hashtable for Compare-FileHash.ps1
+
+$o2 = @{}
+gci .\MIMDiscovery *.ps1 -Recurse | %{$o2.Add(($_.FullName), (Get-FileHash -Path $_.FullName -Algorithm SHA1).Hash)}
+$o2 | Export-CliXml -Path .\old.xml
+

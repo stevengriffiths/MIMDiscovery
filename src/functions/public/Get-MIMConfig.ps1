@@ -11,6 +11,7 @@ function Get-MIMConfig {
     if (Assert-SyncServer) {Get-MIMSyncConfig}
     if (Assert-ServiceServer) {Get-MIMServiceConfig}
     if (Assert-PortalServer) {Get-MIMPortalConfig}
+    if (Assert-SSPRServer) {Get-MIMSSPRConfig}
   }
   catch {
     throw $_
