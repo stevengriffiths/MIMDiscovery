@@ -17,6 +17,6 @@ function Get-MIMServiceInstallAccount {
     return
   }
   finally {
-    Remove-PSSnapin FIMAutomation
+    Remove-PSSnapin FIMAutomation -ErrorAction SilentlyContinue
   }
 }
