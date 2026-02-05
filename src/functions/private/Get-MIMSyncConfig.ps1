@@ -4,4 +4,5 @@ function Get-MIMSyncConfig {
   Get-MIMSyncDatabaseName
   Get-MIMSyncDatabaseServer
   Get-MIMSyncGroups
+  Get-MIMSyncADMAAccount
 }
