@@ -27,11 +27,13 @@ try {
     Recurse = $Recurse
   }
   Get-ChildItem @params | ForEach-Object {
-    $key = $_.FullName
-    if ($PSBoundParameters['RootReplace']) {
-      $key = $_.FullName.Replace($resolvedRoot, $RootReplace)
+    if (Test-Path $_.FullName -PathType Leaf) {
+      $key = $_.FullName
+      if ($PSBoundParameters['RootReplace']) {
+        $key = $_.FullName.Replace($resolvedRoot, $RootReplace)
+      }
+      $ht.Add($key, (Get-FileHash -Path $_.FullName -Algorithm SHA1).Hash)
     }
-    $ht.Add($key, (Get-FileHash -Path $_.FullName -Algorithm SHA1).Hash)
   }
   $ht
 }
