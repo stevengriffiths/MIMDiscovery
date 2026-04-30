@@ -1,6 +1,8 @@
 function Get-MIMPortalConfig {
   try {
+    Get-MIMPortalWindowsVersion
     Get-MIMPortalInstallPath
+    Get-MIMPortalInstallSource
     Get-MIMPortalUrl
     $webApp = Get-MIMPortalWebApp
     if ($webApp) {

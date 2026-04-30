@@ -1,8 +1,10 @@
 function Get-MIMServiceConfig {
   try {
+    Get-MIMServiceWindowsVersion
     Get-MIMServiceVersion
-    Get-MIMServiceInstallAccount
     Get-MIMServiceInstallPath
+    Get-MIMServiceInstallSource
+    Get-MIMServiceInstallAccount
     Get-MIMServiceServiceAccount
     Get-MIMServiceBaseAddress
     Get-MIMServiceAppSettings

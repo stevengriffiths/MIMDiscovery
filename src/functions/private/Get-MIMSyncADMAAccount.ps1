@@ -1,12 +1,10 @@
 function Get-MIMSyncADMAAccount {
   try {
+    Add-Type -Path ((Get-MIMSyncInstallPath).Value + 'UIShell\PropertySheetBase.dll')
+    $ws =  [Microsoft.DirectoryServices.MetadirectoryServices.UI.WebServices.MMSWebService]::new()
     $mas = Get-WmiObject -Namespace "root\MicrosoftIdentityIntegrationServer" -Class MIIS_ManagementAgent
-    $imagePath = Get-ItemPropertyValue -Path HKLM:\SYSTEM\CurrentControlSet\Services\FIMSynchronizationService -Name ImagePath
-    $maexport = ($ImagePath -replace 'miiserver.exe', 'maexport.exe') -replace '"', ''
     $mas | Where-Object { $_.Type -eq 'Active Directory' } | ForEach-Object {
-      $mafile = $env:Temp + '\MA-' + $_.Name + '.xml'
-      & $maexport "$($_.Name)" "$mafile" | Out-Null
-      [xml]$x = Get-Content -Path $mafile
+      [xml]$x = $ws.ExportManagementAgent($_.Name, $true, $false, $(Get-Date -Format "yyyy-mm-dd HH:mm:ss"))
 	  
       [PSCustomObject]@{
         Host     = $env:COMPUTERNAME
@@ -18,8 +16,5 @@ function Get-MIMSyncADMAAccount {
   }
   catch {
     return
-  }
-  finally {
-    if ($mafile) { Remove-Item -Path $mafile -Force -ErrorAction SilentlyContinue }
   }
 }

@@ -1,7 +1,11 @@
 Future enhancements
 
 - Amend SQL access to check for SQL instance name
+  - Seemingly unnecessary, as the Server registry value supports the presence of an instance name
 - Provide support to skip any value retrieval, perhaps using a file
 - Add some logging to identify the check being carried out to use in identifying which check to skip
 - Run all checks, but return 'Unavailable' or similar, instead of just skipping to the next check
 - Add check for main services showing startup type and current state
+- Add installation path (for SP3 upgrades) -- COMPLETE
+- Add SQL Server version, if possible
+- Add Windows version -- COMPLETE
