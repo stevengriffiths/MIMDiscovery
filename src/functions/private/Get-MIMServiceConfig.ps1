@@ -10,6 +10,7 @@ function Get-MIMServiceConfig {
     Get-MIMServiceAppSettings
     Get-MIMServiceSPNs
     Get-MIMServiceDelegation
+    Get-MIMServiceSqlServerVersion
     Get-MIMServiceDatabaseName
     Get-MIMServiceDatabaseServer
     Get-MIMServiceSyncAccount

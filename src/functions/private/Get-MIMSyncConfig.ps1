@@ -4,6 +4,7 @@ function Get-MIMSyncConfig {
   Get-MIMSyncInstallPath
   Get-MIMSyncInstallSource
   Get-MIMSyncServiceAccount
+  Get-MIMSyncSQLServerVersion
   Get-MIMSyncDatabaseName
   Get-MIMSyncDatabaseServer
   Get-MIMSyncGroups
