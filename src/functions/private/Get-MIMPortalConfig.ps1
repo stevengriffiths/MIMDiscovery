@@ -1,6 +1,7 @@
 function Get-MIMPortalConfig {
   try {
     Get-MIMPortalWindowsVersion
+    Get-MIMPortalSPVersion
     Get-MIMPortalInstallPath
     Get-MIMPortalInstallSource
     Get-MIMPortalUrl

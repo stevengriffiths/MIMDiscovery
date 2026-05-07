@@ -7,5 +7,5 @@ Future enhancements
 - Run all checks, but return 'Unavailable' or similar, instead of just skipping to the next check
 - Add check for main services showing startup type and current state
 - Add installation path (for SP3 upgrades) -- COMPLETE
-- Add SQL Server version, if possible
+- Add SQL Server version, if possible -- COMPLETE
 - Add Windows version -- COMPLETE
